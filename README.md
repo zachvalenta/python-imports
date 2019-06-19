@@ -29,11 +29,11 @@ $
 
 ```sh
 >>> import bar
->>> bar.foo.foo_func()
+>>> bar.foo.foo_func() # bar knows about all of foo's attributes
 hi from foo_func
 ```
 
-## child pkg (namespace)
+## child pkg (namespace) - whole pkg
 
 ```sh
 ├── bar.py
@@ -61,16 +61,18 @@ $
 
 ```sh
 >>> import bar
+
 >>> bar.child
 <module 'child' (namespace)>
->>> bar.child.kid_func()
-Traceback (most recent call last):
-  File "<input>", line 1, in <module>
-    bar.child.kid_func()
+
+>>> bar.child.kid # bar has attr child but doesn't know about child's attr
+AttributeError: module 'child' has no attribute 'kid'
+
+>>> bar.child.kid.kid_func() # at any level
 AttributeError: module 'child' has no attribute 'kid_func'
 ```
 
-## child pkg (regular)
+## child pkg (regular) - whole pkg
 
 * otherwise same as namespace but w/ addition of `__init__.py` in `child` directory
 
