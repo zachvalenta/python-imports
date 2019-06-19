@@ -1,2 +1,2 @@
 import foo
-import child
+from child import kid

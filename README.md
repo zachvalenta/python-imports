@@ -81,3 +81,18 @@ AttributeError: module 'child' has no attribute 'kid_func'
 <module 'child' from '/Users/zach/Desktop/zvmac/materials/sw/lang/python/impor
 tmess/child/__init__.py'> 
 ```
+
+## child pkg (namespace) - specific submodule
+
+* otherwise same as 'child pkg (namespace) - whole pkg' but update import syntax:
+
+```diff
+- import child
++ from child import kid
+```
+
+```sh
+>>> import bar
+>>> bar.kid.kid_func()
+hi from kid_func
+```
