@@ -1,6 +1,6 @@
 # what is this?
 
-* sandbox to explore Python's import system
+* exploration of Python's import system
 
 # examples
 
