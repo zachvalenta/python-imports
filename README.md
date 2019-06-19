@@ -69,3 +69,13 @@ Traceback (most recent call last):
     bar.child.kid_func()
 AttributeError: module 'child' has no attribute 'kid_func'
 ```
+
+## child pkg (regular)
+
+* otherwise same as namespace but w/ addition of `__init__.py` in `child` directory
+
+```sh
+>>> bar.child
+<module 'child' from '/Users/zach/Desktop/zvmac/materials/sw/lang/python/impor
+tmess/child/__init__.py'> 
+```
