@@ -8,18 +8,18 @@
 
 ```sh
 ├── bar.py
-├── foo.py
+├── baz.py
 ```
 
 ```python
 # bar.py
-import foo
+import baz
 ```
 
 ```python
 # foo.py
-def foo_func():
-    print('hi from foo_func')
+def baz_func():
+    print('hi from baz_func')
 ```
 
 ```sh
@@ -28,23 +28,23 @@ $
 ```
 
 ```sh
->>> import bar
->>> bar.foo.foo_func() # bar knows about all of foo's attributes
-hi from foo_func
+>>> import baz
+>>> bar.baz.baz_func() # bar knows about all of foo's attributes
+hi from baz_func
 ```
 
 ## child pkg (namespace) - whole pkg
 
 ```sh
 ├── bar.py
-├── foo.py
+├── baz.py
 ├── child
 │   └── kid.py
 ```
 
 ```python
 # bar.py
-import foo
+import baz
 import child
 ```
 
