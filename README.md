@@ -96,3 +96,33 @@ tmess/child/__init__.py'>
 >>> bar.kid.kid_func()
 hi from kid_func
 ```
+
+## grandchild pkg (namespace)
+
+```sh
+├── README.md
+├── bar.py
+├── child
+│   ├── grandchild
+│   │   └── grandkid.py
+│   └── kid.py
+└── foo.py
+```
+
+```python
+# bar.py
+import foo
+from child import kid
+from child.grandchild import grandkid
+```
+
+```sh
+$ py3 bar.py
+$
+```
+
+```sh
+$ bpy
+>>> import child.grandchild
+>>> import child.grandchild.grandkid
+```
