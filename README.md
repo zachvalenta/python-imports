@@ -49,7 +49,7 @@ import child
 ```
 
 ```python
-# foo.py
+# kid.py
 def kid_func():
     print('hi from kid_func')
 ```
