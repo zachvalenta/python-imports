@@ -1,8 +1,12 @@
-# what is this?
+# overview
 
-* exploration of Python's import system
+This is an exploration of Python's import system.
+
+Some imports are easy (stdlib, third-party package from a virtual environment), but user-defined modules can get tricky as you move beyond importing sibling modules.
 
 # examples
+
+⚠️ you don't get autocomplete from `bpython` for namespace packages (on the first import; might get it 2nd time within session due to caching)
 
 ## same pkg
 
