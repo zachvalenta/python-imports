@@ -6,35 +6,34 @@ Some imports are easy (stdlib, third-party package from a virtual environment), 
 
 # examples
 
-⚠️ you don't get autocomplete from `bpython` for namespace packages (on the first import; might get it 2nd time within session due to caching)
+📝 An alternate interactive interpreter like `bpython` or `ptpython` will have autocomplete, so as you type you'll be able to see what attributes are available on the module you've imported:
+
+```sh
+$ bpy
+bpython version 0.17.1 on top of Python 3.6.1 /Library/Frameworks/Python.framework/Versions/3.6/bin/python3.6
+>>> import alice
+>>> alice.
+bob    grandkid    kid
+```
 
 ## same pkg
 
 ```sh
-├── bar.py
-├── baz.py
-```
-
-```python
-# bar.py
-import baz
-```
-
-```python
-# foo.py
-def baz_func():
-    print('hi from baz_func')
+├── alice.py # import bob
+├── bob.py # def bob_func(): print('hi from bob func')
 ```
 
 ```sh
-$ py3 bar.py
+$ py3 alice.py
 $
 ```
 
 ```sh
->>> import baz
->>> bar.baz.baz_func() # bar knows about all of foo's attributes
-hi from baz_func
+>>> import alice
+>>> alice.bob.bob_func1()
+hi from bob func 1
+>>> alice.bob.bob_func2()
+hi from bob func 2
 ```
 
 ## child pkg (namespace) - whole pkg
